@@ -1,7 +1,33 @@
 # Challenge 01
 
+** The challenge **
 
-## Solución
+A spy is sending encrypted messages.
+
+Your mission is to create a programme that helps us look for patterns...
+
+Messages are words separated by spaces like this:
+
+``gato perro perro coche Gato peRRo sol``
+
+We need the program to return the number of times each word appears in the message, regardless of whether it is in upper or lower case.
+
+The result will be a text string with the word and the number of times it appears in the message, in this format:
+
+``gato2perro3coche1sol1``
+
+The words are ordered by their first appearance in the message!
+
+** More examples: **
+
+llaveS casa CASA casa llaves -> llaves2casa3
+
+taza ta za taza -> taza2ta1za1
+
+casas casa casasas -> casas1casa1casas1
+
+
+## Solution
 
 ```js
 const msg 'words'
@@ -17,4 +43,10 @@ function countWords (mensaje) {
 
 console.log(countingWords(msg))
 
+```
+
+## Reply
+
+```bash
+submit murcielago15leon15jirafa15cebra6elefante15rinoceronte15hipopotamo15ardilla15mapache15zorro15lobo15oso15puma2jaguar14tigre10leopardo10gato12perro12caballo14vaca14toro14cerdo14oveja14cabra14gallina10pato10ganso10pavo10paloma10halcon11aguila11buho11colibri9canario8loro8tucan8pinguino7flamenco7
 ```
