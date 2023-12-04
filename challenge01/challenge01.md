@@ -26,6 +26,15 @@ taza ta za taza -> taza2ta1za1
 
 casas casa casasas -> casas1casa1casas1
 
+** How to solve it **
+
+Solve the message you will find in this file:
+
+[here](https://codember.dev/data/message_01.txt)
+
+Submit your solution with the command "submit" in the terminal, for example like this:
+
+``submit perro3gato3coche1sol1``
 
 ## Solution
 
