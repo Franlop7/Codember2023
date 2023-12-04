@@ -30,7 +30,7 @@ casas casa casasas -> casas1casa1casas1
 
 Solve the message you will find in this file:
 
-[here](https://codember.dev/data/message_01.txt)
+https://codember.dev/data/message_01.txt
 
 Submit your solution with the command "submit" in the terminal, for example like this:
 
