@@ -37,3 +37,48 @@ https://codember.dev/data/encryption_policies.txt
 Crea un programa que devuelva la clave inválida número 42 (de todas las claves inválidas, la 42ª en orden de aparición). Por ejemplo:
 
 ``submit bqamidgewtbuz``
+
+## Solution
+
+```js
+// Función para encontrar la clave inválida número 42 entre todas las claves inválidas
+function findInvalidPasswordNumber(input) {
+  // Dividir las líneas del input y eliminar espacios en blanco alrededor
+  const lines = input.split("\n").map((line) => line.trim());
+
+  // Array para almacenar claves inválidas
+  const invalidPasswords = [];
+
+  // Iterar sobre cada línea de la entrada
+  for (let i = 0; i < lines.length; i++) {
+    // Separar la política de la clave y la contraseña
+    const [policy, password] = lines[i].split(": ");
+
+    // Separar el rango y el carácter de la política
+    const [range, char] = policy.split(" ");
+
+    // Convertir los límites del rango a números
+    const [minCount, maxCount] = range.split("-").map(Number);
+
+    // Verificar si la contraseña cumple con la política
+    if (!isPasswordValid([minCount, maxCount, char], password)) {
+      // Almacenar la contraseña en el array de claves inválidas
+      invalidPasswords.push(password);
+
+      // Si ya se han encontrado 42 claves inválidas, devolver dicha clave
+      if (invalidPasswords.length === 42) {
+        return invalidPasswords[41];
+      }
+    }
+  }
+
+  // Si no se encontraron suficientes claves inválidas, devolver null
+  return null;
+}
+```
+
+## Reply
+
+```bash
+submit bgamidqewtbus
+```
