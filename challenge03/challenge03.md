@@ -77,6 +77,14 @@ function findInvalidPasswordNumber(input) {
 }
 ```
 
+```js
+function findInvalidPasswordNumber(policy, passwords) {
+  const [minCount, maxCount, char] = policy;
+  const charCount = (passwords.match(new RegExp(char, "g")) || []).length;
+  return minCount <= charCount && charCount <= maxCount;
+}
+```
+
 ## Reply
 
 ```bash
