@@ -39,14 +39,12 @@ Busca el archivo real número 33 (de todos los archivos reales, el 33º en orden
 function correctFiles (files) {
 	return files.filter(file => {
 		const [name, checksum] = file.split('-');
-
 		const uniqueChars = name.split("").filter((char, index, self) => {
 			return name.slice(index + 1).indexOf(char) === -1 && self.indexOf(char) === index;
 		});
 		return checksum === uniqueChars.join("");
 	});
 }
-
 console.log(correctFiles(files)[32]);
 ```
 
