@@ -32,3 +32,26 @@ https://codember.dev/data/files_quarantine.txt
 Busca el archivo real número 33 (de todos los archivos reales, el 33º en orden de apareción) y envía su checksum con submit. Por ejemplo si el archivo es xyzz33-xy, harías:
 
 ``submit xy``
+
+## solution
+
+```js
+function correctFiles (files) {
+	return files.filter(file => {
+		const [name, checksum] = file.split('-');
+
+		const uniqueChars = name.split("").filter((char, index, self) => {
+			return name.slice(index + 1).indexOf(char) === -1 && self.indexOf(char) === index;
+		});
+		return checksum === uniqueChars.join("");
+	});
+}
+
+console.log(correctFiles(files)[32]);
+```
+
+## Reply
+
+```bash
+submit O2hrQ
+```
