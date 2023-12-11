@@ -62,6 +62,27 @@ function findInvalidCharacter (data) {
 	}, []).join('');
 }
 ```
+```js
+function findInvalidCharacter(data) {
+    return data.reduce((usersInvalid, row) => {
+        const columns = row.split(',').map(column => column.trim());
+
+        const [id, username, email, age, location] = columns;
+
+        const isValidId = /^[a-zA-Z0-9]+$/.test(id);
+        const isValidUsername = /^[a-zA-Z0-9]+$/.test(username);
+        const isValidEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
+        const isValidAge = age === '' || (!isNaN(age) && Number(age) >= 0);
+        const isValidLocation = location === '' || typeof location === 'string';
+
+        if (!isValidId || !isValidUsername || !isValidEmail || !isValidAge || !isValidLocation) {
+            usersInvalid.push(username[0]);
+        }
+
+        return usersInvalid;
+    }, []).join('');
+}
+```
 
 ## Reply
 
