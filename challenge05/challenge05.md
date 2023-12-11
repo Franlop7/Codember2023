@@ -36,3 +36,35 @@ https://codember.dev/data/database_attacked.txt
 Encuentra el primer caracter (número o letra) del username de cada usuario inválido. Júntalos por orden de aparición y descubre el mensaje oculto. Luego envíalo con submit. Por ejemplo:
 
 ``submit att4ck``
+
+## solution
+
+```js
+function findInvalidCharacter (data) {
+	return data.reduce((usersInvalid, row) => {
+		const columns = row.split(',');
+
+		const id = columns[0].trim();
+		const username = columns[1].trim();
+		const email = columns[2].trim();
+		const age = columns[3] ? columns[3].trim() : '';
+		const location = columns[4] ? columns[4].trim() : '';
+
+		if (!/^[a-zA-Z0-9]+$/.test(id) ||
+			!/^[a-zA-Z0-9]+$/.test(username) ||
+			!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email) ||
+			(age !== '' && isNaN(age)) ||
+			(location !== '' && typeof location !== 'string')) {
+			usersInvalid.push(username[0]);
+		}
+
+		return usersInvalid;
+	}, []).join('');
+}
+```
+
+## Reply
+
+```bash
+submit youh4v3beenpwnd
+```
