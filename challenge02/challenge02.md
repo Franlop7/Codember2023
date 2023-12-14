@@ -2,52 +2,52 @@
 
 ** Mini Compiler Challenge **
 
-En el mundo del espionaje, se utiliza un lenguaje de codificación con símbolos que realizan operaciones matemáticas simples.
+In the world of espionage, a coding language is used with symbols that perform simple mathematical operations.
 
-Tu tarea es crear un mini compilador que interprete y ejecute programas escritos en este lenguaje de símbolos.
+Your task is to create a mini-compiler that interprets and executes programs written in this symbol language.
 
-Las operaciones del lenguaje son las siguientes:
-
-```bs
-"#" Incrementa el valor numérico en 1.
-
-"@" Decrementa el valor numérico en 1.
-
-"*" Multiplica el valor numérico por sí mismo.
-
-"&" Imprime el valor numérico actual.
-```
-
-El valor numérico inicial es 0 y las operaciones deben aplicarse en elorden en que aparecen en la cadena de símbolos.
-
-** Ejemplos de entrada: **
+The operations of the language are as follows:
 
 ```bs
-Entrada: "##*&"
+"#" Increments the numerical value by 1.
 
-Salida esperada: "4"
+"@" Decrements the numerical value by 1.
 
-Explicación: Incrementa (1), incrementa (2), multiplica (4), imprime (4).
+"*" Multiplies the numerical value by itself.
 
-
-Entrada: "&##&*&@&"
-
-Salida esperada: "0243"
-
-Explicación: Imprime (0), incrementa (1), incrementa (2), imprime (2), multiplica (4), imprime (4), decrementa (3), imprime (3).
+"&" Prints the current numerical value.
 ```
 
-** Tu desafío: **
+The initial numeric value is 0 and the operations must be applied in the order in which they appear in the symbol string.
 
-Desarrolla un mini compilador que tome una cadena de texto y devuelva otra cadena de texto con el resultado de ejecutar el programa.
+** Examples of entry: **
 
-** Cómo resolverlo **
+```bs
+input: "##*&"
 
-Resuelve el mensaje que encontrarás en este archivo:
+expected output: "4"
+
+Explanation: Increment (1), increment (2), multiplies (4), print (4).
+
+
+input: "&##&*&@&"
+
+expected output: "0243"
+
+Explanation: Print (0), increment (1), increment (2), print (2), multiplies (4), print (4), decrement (3), print (3).
+```
+
+** You Challenge: **
+
+Develop a mini compiler that takes a string of text and returns another string of text with the result of running the program.
+
+** How to solve it **
+
+Solve the message you will find in this file:
 
 https://codember.dev/data/message_02.txt
 
-Crea un programa al que le pases como entrada el mensaje anterior. Envía la salida con el comando "submit" en la terminal, por ejemplo así:
+Create a program to which you pass the above message as input. Send the output with the command "submit" in the terminal, for example like this:
 
 ``submit 024899488``
 
@@ -55,11 +55,11 @@ Crea un programa al que le pases como entrada el mensaje anterior. Envía la sal
 
 ```js
 function miniCompiler(input) {
-  // Inicializar variables
+  // Initialise variables
   let value = 0;
   let result = "";
 
-  // Convertir la cadena a un array y utilizar forEach para iterar
+  // Convert string to array and use forEach to iterate
   input.split("").forEach((input) => {
     if (input === "#") {
       value++;
@@ -70,10 +70,10 @@ function miniCompiler(input) {
     } else if (input === "&") {
       result += value;
     }
-    // Ignorar caracteres desconocidos
+    // Ignore unknown characters
   });
 
-  // Devolver el resultado acumulado
+  // Return cumulative result
   return result;
 }
 ```
