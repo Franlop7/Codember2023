@@ -1,35 +1,35 @@
 # Challenge 04
 
-** Hackers dañan sistema de archivos **
+** Hackers damage file system **
 
-En un mundo donde la información es poder, un hacker conocido como Savipo Yatar descubre una serie de archivos en un servidor altamente protegido.
+In a world where information is power, a hacker known as Savipo Yatar discovers a series of files on a highly protected server.
 
-Estos archivos contienen secretos que podrían cambiar el curso de la historia. Pero hay un problema: algunos de los archivos son falsos, diseñados para engañar a los intrusos. Savipo Yatar debe determinar rápidamente cuáles archivos son reales y cuáles son falsos.
+These files contain secrets that could change the course of history. But there's a problem: some of the files are fakes, designed to deceive intruders. Savipo Yatar must quickly determine which files are real and which are fake.
 
-Cada archivo tiene un nombre con dos partes, separadas por un guion (-). La primera parte es una cadena alfanumérica y la segunda es unchecksum, que es una cadena formada por los caracteres que sólo aparecen una vez en la primera parte y en el orden en que aparecen.
+Each file has a name with two parts, separated by a hyphen (-). The first part is an alphanumeric string and the second part is unchecksum, which is a string consisting of the characters that only appear once in the first part and in the order in which they appear.
 
-Escribe un programa que determine si un archivo es real o falso basado en estas reglas.
+Write a program that determines whether a file is real or fake based on these rules.
 
-Ejemplos:
+Examples:
 ```bs
-Nombre del archivo: xyzz33-xy
-Resultado: ✅ Real (El checksum es válido)
+File name: xyzz33-xy
+Result: ✅ True (The checksum is valid)
 
-Nombre del archivo: abcca1-ab1
-Resultado: ❌ Falso (El checksum debería ser b1, es incorrecto)
+File name: abcca1-ab1
+Result: ❌ False (The checksum should be b1, it is incorrect.)
 
-Nombre del archivo: abbc11-ca
-Resultado: ❌ Falso (El checksum debería ser ac, el orden es incorrecto)
-Cada línea indica el nombre del archivo y su correspondiente checksum, separados por un guion (-).
+File name: abbc11-ca
+Result: ❌ False (The checksum should be ac, the order is incorrect.)
+Each line indicates the name of the file and its corresponding checksum, separated by a hyphen (-).
 ```
 
-** Cómo resolverlo **
+** How to solve it **
 
-Analiza la lista de nombres de archivos y sus checksums que encontrarás en este archivo:
+Analyse the list of file names and their checksums that you will find in this file:
 
 https://codember.dev/data/files_quarantine.txt
 
-Busca el archivo real número 33 (de todos los archivos reales, el 33º en orden de apareción) y envía su checksum con submit. Por ejemplo si el archivo es xyzz33-xy, harías:
+Find the real file number 33 (of all the real files, the 33rd in order of appearance) and send its checksum with submit. For example if the file is xyzz33-xy, you would do:
 
 ``submit xy``
 
