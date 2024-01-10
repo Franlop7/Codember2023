@@ -1,39 +1,39 @@
 # Challenge 05
 
-** El problema final **
+** The final problem **
 
-Finalmente los hackers han conseguido acceder a la base de datos y la han dejado corrupta. Pero parece que han dejado un mensaje oculto en la base de datos. ¿Podrás encontrarlo?
+The hackers have finally managed to access the database and have left it corrupted. But they seem to have left a hidden message in the database - can you find it?
 
-Nuestra base de datos está en formato .csv. Las columnas son id, username, email, age, location.
+Our database is in .csv format. The columns are id, username, email, age, location.
 
-Un usuario sólo es válido si:
+A user is only valid if:
 
-- id: existe y es alfanumérica
-- username: existe y es alfanumérico
-- email: existe y es válido (sigue el patrón user@dominio.com)
-- age: es opcional pero si aparece es un número
-- location: es opcional pero si aparece es una cadena de texto
+- id: exists and is alphanumeric
+- username: exists and is alphanumeric
+- email: exists and is valid (follows the pattern user@dominio.com)
+- age: is optional but if it appears it is a number.
+- location: optional, but if it appears it is a text string.
 
-Ejemplos:
+Examples:
 ```bs
-Entrada: 1a421fa,alex,alex9@gmail.com,18,Barcelona
-Resultado: ✅ Válido
+input: 1a421fa,alex,alex9@gmail.com,18,Barcelona
+Result: ✅ Valid
 
-Entrada: 9412p_m,maria,mb@hotmail.com,22,CDMX
-Resultado: ❌ Inválido (id no es alfanumérica, sobra el _)
+input: 9412p_m,maria,mb@hotmail.com,22,CDMX
+Result: ❌ Invalid (id is not alphanumeric, the _ is left over.)
 
-Entrada: 494ee0,madeval,mdv@twitch.tv,,
-Resultado: ✅ Válido (age y location son opcionales)
-Entrada: 494ee0,madeval,twitch.tv,22,Montevideo
-Resultado: ❌ Inválido (email no es válido)
+input: 494ee0,madeval,mdv@twitch.tv,,
+Result: ✅ Valid (age and location are optional)
+input: 494ee0,madeval,twitch.tv,22,Montevideo
+Result: ❌ Invalid (email is invalid)
 ```
-** Cómo resolverlo **
+** How to solve it **
 
-Analiza la lista de entradas de la baes de datos y detecta los inválidos:
+It scans the list of entries in the database and detects invalid entries:
 
 https://codember.dev/data/database_attacked.txt
 
-Encuentra el primer caracter (número o letra) del username de cada usuario inválido. Júntalos por orden de aparición y descubre el mensaje oculto. Luego envíalo con submit. Por ejemplo:
+Find the first character (number or letter) of the username of each invalid user. Put them together in order of appearance and find the hidden message. Then send it with submit. For example:
 
 ``submit att4ck``
 
